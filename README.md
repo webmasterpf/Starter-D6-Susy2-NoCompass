@@ -13,6 +13,11 @@ Installation de Gulp
 :/var/www/drupal-6/sites/all/themes/dossier_projet$ npm init
 :/var/www/drupal-6/sites/all/themes/dossier_projet$ npm install gulp --save-dev
 
+Plugin pour Gulp (permet de charger tous les plugins)
+:/var/www/drupal-6/sites/all/themes/dossier_projet$ npm install --save-dev gulp-load-plugins
+
+Plugin pour Sass:
+:/var/www/drupal-6/sites/all/themes/dossier_projet$ npm install  --save-dev gulp-sass
 
 https://github.com/at-import/breakpoint
 
