@@ -30,11 +30,11 @@ breakpoint-2.5.0
 //Import des plugins de Sass (sans compass) via des Gems
 @import "susy";// utiliser susyone si syntaxe ancienne(Susy v1),sinon susy pour utiliser v2
 //@import 'modular-scale';
-@import "sassy-buttons";
-
+//@import "sassy-buttons";
+@import "breakpoint";
 
 // Pour utiliser les breakpoint suite abandon Compass
-@import "vendor/breakpoint"; 
+//@import "vendor/breakpoint"; 
 
 // Import des réglages susy pour la grille
 @import "global/variables";
@@ -44,24 +44,24 @@ breakpoint-2.5.0
 @import "global/mixins_custom";
 @import "global/typos";
 @import "global/style";
-@import "global/sub-nav";
+/*@import "global/sub-nav";*/
 @import "global/flex";
 @import "global/_stacktable.scss";
 
 // Import des partiels du layout du thème Drupal
 
-@import "layout/layout";
+/*@import "layout/layout";*/
 @import "layout/layout-nodes";
 @import "layout/layout-nodes-flexbox";
 @import "layout/layout-header";
-@import "layout/layout-footer";
-@import "layout/layout-defilant";
+/*@import "layout/layout-footer";*/
+/*@import "layout/layout-defilant";*/
 @import "layout/layout-bandeau";
 @import "layout/layout-off-canvas-susy";
 // Les BREAKPOINTS
         
-@import "layout/layout-bp-tablet";
-@import "layout/layout-bp-desktop";
+/*@import "layout/layout-bp-tablet";*/
+/*@import "layout/layout-bp-desktop";*/
 //@import "layout/layout-bp-mobile-landscape";
 
 @import "ui/maintenance";
@@ -71,7 +71,7 @@ breakpoint-2.5.0
 
 //Import Homepage - choisir quel layout et style utiliser
 @import "layout/layout-diapo-frontpage";
-@import "content-type-style/_frontpage-verticalGauche.scss";
+/*@import "content-type-style/_frontpage-verticalGauche.scss";*/
 @import "layout/_layout-vertical-hp-gauche.scss";
 
 

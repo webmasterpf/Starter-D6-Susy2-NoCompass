@@ -7,12 +7,23 @@ var plugins = require('gulp-load-plugins')();
 
 
 // Variables de chemins des fichiers à compiler
-var source = './sass/**/*.scss'; // dossier de travail
+//var source = './sass/**/*.scss'; // dossier de travail
+var source = './sass/**/application.scss'; // dossier de travail
 var destination = './css/'; // dossier à livrer
 
 //Variable pour les gems (à adapter selon environnement)
-var gems = '/home/webmaster/vendor/bundle/gems/';
-
+// File paths to various assets are defined here.
+var PATHS = {
+  gems: [
+    '/home/webmaster/vendor/bundle/gems/susy-2.2.2/sass',
+    '/home/webmaster/vendor/bundle/gems/breakpoint-2.7.1/stylesheets',
+    '/home/webmaster/vendor/bundle/gems/',
+  ],
+  javascript: [
+    '',
+       
+  ],
+};
 // Tâche "build" = SASS + autoprefixer + CSScomb + beautify (source -> destination)
 gulp.task('sasscompil', function () {
   return gulp.src(source)
@@ -20,16 +31,14 @@ gulp.task('sasscompil', function () {
     .pipe(plugins.sass({
         bundleExec: true,
         outputStyle: 'compressed',
-        includePaths: [
-            gems + 'susy-2.2.2/sass', 
-            gems + 'sassy-buttons-0.2.6/stylesheets',
-        ]
+        includePaths: PATHS.gems,
+        
     })
             .on('error', plugins.sass.logError)
             )
-//    .pipe(sass().on('error', sass.logError))
-    .pipe(plugins.csscomb())
-    .pipe(plugins.cssbeautify({indent: '  '}))
+
+//    .pipe(plugins.csscomb())
+//    .pipe(plugins.cssbeautify({indent: '  '}))
     .pipe(plugins.autoprefixer())
     .pipe(gulp.dest(destination + ''));
 });
