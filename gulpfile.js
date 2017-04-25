@@ -20,7 +20,10 @@ gulp.task('sasscompil', function () {
     .pipe(plugins.sass({
         bundleExec: true,
         outputStyle: 'compressed',
-        includePaths: [gems + 'susy-2.2.2/sass', gems + 'sassy-buttons-0.2.6/templates/project']
+        includePaths: [
+            gems + 'susy-2.2.2/sass', 
+            gems + 'sassy-buttons-0.2.6/stylesheets',
+        ]
     })
             .on('error', plugins.sass.logError)
             )

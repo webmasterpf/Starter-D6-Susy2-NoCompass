@@ -17,7 +17,8 @@ Plugin pour Gulp (permet de charger tous les plugins)
 :/var/www/drupal-6/sites/all/themes/dossier_projet$ npm install gulp-load-plugins --save-dev
 
 Plugin pour Sass:
-:/var/www/drupal-6/sites/all/themes/dossier_projet$ npm install gulp-sass --save-dev
+$ npm install gulp-sass --save-dev
+$ npm install gulp-autoprefixer --save-dev
 
 https://github.com/at-import/breakpoint
 
