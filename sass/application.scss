@@ -25,12 +25,16 @@ breakpoint-2.5.0
 // Import de Compass (framework abandonné en 2016)
 //@import "compass";
 
+/// !!! EDITER LE FICHIER GULPFILE.JS POUR DEFINIR LES CHEMINS DES GEMS !!!
 
-//Import des plugins de Compass
+//Import des plugins de Sass (sans compass) via des Gems
 @import "susy";// utiliser susyone si syntaxe ancienne(Susy v1),sinon susy pour utiliser v2
 //@import 'modular-scale';
-@import "vendor/breakpoint"; // Pour utiliser les breakpoint de compass
 @import "sassy-buttons";
+
+
+// Pour utiliser les breakpoint suite abandon Compass
+@import "vendor/breakpoint"; 
 
 // Import des réglages susy pour la grille
 @import "global/variables";
