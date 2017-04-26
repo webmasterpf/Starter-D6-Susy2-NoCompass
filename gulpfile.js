@@ -68,13 +68,13 @@ gulp.task('sasscompil', function () {
 //gulp.task('prod', ['build',  'minify']);
 //
 //// Tâche "watch" = je surveille *less
-gulp.task('watch', function () {
-  gulp.watch(source, ['sasscompil']);
+gulp.task('default',function() {
+    gulp.watch(source, ['sasscompil']);
 });
 //
 //// Tâche par défaut
 //gulp.task('default', ['build']);
-gulp.task('default', ['watch']);
+
 
 //Debug des plugins chargés
  console.log(Object.keys(plugins)); 

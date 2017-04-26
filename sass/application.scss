@@ -46,11 +46,11 @@ breakpoint-2.5.0
 @import "global/style";
 @import "global/flex";
 @import "global/_stacktable.scss";
-@import "global/sub-nav";
+/*@import "global/sub-nav";*/
 
 // Import des partiels du layout du thème Drupal
 
-/*@import "layout/layout";*/
+@import "layout/layout";
 @import "layout/layout-nodes";
 @import "layout/layout-nodes-flexbox";
 @import "layout/layout-header";

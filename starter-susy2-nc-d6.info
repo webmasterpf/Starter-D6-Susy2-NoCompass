@@ -3,7 +3,7 @@
 ;Changer le screenshot du site pour interface admin
 ;
 name = SUSY 2 Template for PF
-description = Gabarit SCSS /HTML5 pour Drupal 6. Thème RWD utilisant Susy 2
+description = Gabarit SCSS /HTML5 pour Drupal 6. Thème RWD utilisant Susy 2, GULP, Sans Compass
 version = VERSION
 core = 6.x
 engine = phptemplate
