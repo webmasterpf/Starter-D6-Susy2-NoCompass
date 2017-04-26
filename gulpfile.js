@@ -1,3 +1,4 @@
+"use strict";
 // Requis
 var gulp = require('gulp');
 
@@ -24,6 +25,12 @@ var PATHS = {
        
   ],
 };
+// Autoprefixer : Navigateurs à cibler pour le préfixage CSS
+var COMPATIBILITY = [
+  'last 2 versions',
+  'ie >= 9',
+  'Android >= 2.3'
+];
 // Tâche "build" = SASS + autoprefixer + CSScomb + beautify (source -> destination)
 gulp.task('sasscompil', function () {
   return gulp.src(source)
@@ -45,7 +52,7 @@ gulp.task('sasscompil', function () {
             .pipe(plugins.autoprefixer
                     (
                             {
-                                browsers: ['last 2 versions'],
+                                browsers: COMPATIBILITY,
                                 cascade: false
                             }
                     ))
