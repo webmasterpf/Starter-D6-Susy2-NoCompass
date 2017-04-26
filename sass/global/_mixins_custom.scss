@@ -25,6 +25,24 @@
   @include reset-box-model;
   @include clearfix;
 }
+@mixin horizontal-list {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    > li{
+        display:block;
+        float:left;
+        &:last-child{
+            margin-right:0px;
+        }
+    }
+}
+@mixin background-size($taille-bg: auto){
+    //Possibles options auto,length,percentage,cover,contain,initial,inherit
+    //préfixage via Gulp autoprefixer aprés compilation
+    background-size: $taille-bg;
+}
 /*---------- PIE pour CSS3 IE --------------*/
 @mixin PIE {
     behavior: url(/sites/all/libraries/PIE/PIE.htc);

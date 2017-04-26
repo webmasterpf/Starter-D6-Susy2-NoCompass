@@ -92,7 +92,7 @@ body .conteneur
 .content-bottom-home {
     table{width: auto;}
     a {
-        //@include zocial;
+        
     }
     ul{
          @include horizontal-list;
@@ -317,7 +317,6 @@ aside.DiapoHP{
 }
 
 // Style du diaporama dynamique
-
 /*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE PAS SUR MOBILE----*/
 /* Classe diapo-homepage ajoutée sur le bloc via le module block_class*/
 .conteneur aside.diapo-homepage {

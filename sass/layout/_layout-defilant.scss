@@ -46,7 +46,7 @@ aside .annonce-container .annonce
     font-weight: bold;
     margin: 0;
     padding: 0;
-    @include adjust-font-size-to(16px);
+    font-size: medium;
     a {
         color: $color-defilant-a;
         text-decoration: none;

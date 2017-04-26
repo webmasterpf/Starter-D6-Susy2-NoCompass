@@ -35,9 +35,11 @@ gulp.task('sasscompil', function () {
         
     })
 //            .on('error', plugins.sass.logError)
-            .on('error', console.error.bind(console, 'SASS Error :'))
+        //    .on('error', console.error.bind(console, 'SASS Error :'))
+        //Avec fonction anti-crash sur erreurs
+            .on('error', onError)
             )
-
+     
 //    .pipe(plugins.csscomb())
 //    .pipe(plugins.cssbeautify({indent: '  '}))
             .pipe(plugins.autoprefixer
@@ -67,14 +69,21 @@ gulp.task('sasscompil', function () {
 //// Tâche "prod" = Build + minify
 //gulp.task('prod', ['build',  'minify']);
 //
-//// Tâche "watch" = je surveille *less
-gulp.task('default',function() {
-    gulp.watch(source, ['sasscompil']);
+//// Tâche "watch" = je surveille *scss
+gulp.task('watch', function() {
+  // Watch - surveiller.scss files
+  gulp.watch(source, ['sasscompil']);
+  //Surveiller les images pour les sprites
 });
 //
 //// Tâche par défaut
-//gulp.task('default', ['build']);
+gulp.task('default', ['watch']);
 
 
-//Debug des plugins chargés
+//Debug des plugins chargés : liste les plugins chargés
  console.log(Object.keys(plugins)); 
+ //Empêcher crash de Gulp en cas d'erreur
+ function onError(err) {
+  console.log(err);
+  this.emit('end');
+}
