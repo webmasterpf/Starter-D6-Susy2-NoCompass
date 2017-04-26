@@ -19,6 +19,7 @@ Plugin pour Gulp (permet de charger tous les plugins)
 Plugin pour Sass:
 $ npm install gulp-sass --save-dev
 $ npm install gulp-autoprefixer --save-dev
+$ npm install gulp-size --save-dev
 
 https://github.com/at-import/breakpoint
 

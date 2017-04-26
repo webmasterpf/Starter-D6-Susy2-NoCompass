@@ -6,9 +6,9 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
 
-// Variables de chemins des fichiers à compiler
-//var source = './sass/**/*.scss'; // dossier de travail
-var source = './sass/**/application.scss'; // dossier de travail
+// Variables de chemins des fichiers à compiler/surveiller
+var source = './sass/**/*.scss'; // dossier de travail
+//var source = './sass/**/application.scss'; // dossier de travail
 var destination = './css/'; // dossier à livrer
 
 //Variable pour les gems (à adapter selon environnement)
@@ -34,13 +34,21 @@ gulp.task('sasscompil', function () {
         includePaths: PATHS.gems,
         
     })
-            .on('error', plugins.sass.logError)
+//            .on('error', plugins.sass.logError)
+            .on('error', console.error.bind(console, 'SASS Error :'))
             )
 
 //    .pipe(plugins.csscomb())
 //    .pipe(plugins.cssbeautify({indent: '  '}))
-    .pipe(plugins.autoprefixer())
-    .pipe(gulp.dest(destination + ''));
+            .pipe(plugins.autoprefixer
+                    (
+                            {
+                                browsers: ['last 2 versions'],
+                                cascade: false
+                            }
+                    ))
+    .pipe(gulp.dest(destination + ''))
+    .pipe(plugins.size());
 });
 
 // Tâche "minify" = minification CSS (destination -> destination)
@@ -60,13 +68,13 @@ gulp.task('sasscompil', function () {
 //gulp.task('prod', ['build',  'minify']);
 //
 //// Tâche "watch" = je surveille *less
-//gulp.task('watch', function () {
-//  gulp.watch(source + '/assets/css/*.less', ['build']);
-//});
+gulp.task('watch', function () {
+  gulp.watch(source, ['sasscompil']);
+});
 //
 //// Tâche par défaut
 //gulp.task('default', ['build']);
-gulp.task('default', ['sasscompil']);
+gulp.task('default', ['watch']);
 
 //Debug des plugins chargés
  console.log(Object.keys(plugins)); 

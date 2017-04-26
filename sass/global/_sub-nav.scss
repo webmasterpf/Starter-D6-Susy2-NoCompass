@@ -13,15 +13,14 @@ aside.navStatic{
         .horizontal-nav { display:block; }
         ul.horizontal-nav {        
             //Flexbox initialisation du conteneur
-        @include display-flex;//Compass Mixin
+       @include flex;//Compass Mixin replacement issue de flex.scss
        @include flex-flow(row wrap);
-       
             @include horizontal-list-container;//Compass Mixin
             @include break;
             padding-top: 1em;
             li {
               @include flex(1 0 auto);
-                @include horizontal-list-item;//Compass Mixin
+                /*@include horizontal-list-item;//Compass Mixin*/
                
                 padding: 0;
                 text-align:center;
@@ -56,7 +55,7 @@ aside.navStatic{
             }
             li.logo{
                 /*background-image: image-url("logo-Pf-sites-lycees.jpg");//avec compass*/
-                background-image: image-url("logo-PF-lycees.svg");//avec compass
+                background-image: url("./images/logo-PF-lycees.svg");//sans compass
                 background-position: left 0.45em;
                 background-size: contain;
                 text-indent: -9999em;
@@ -83,7 +82,7 @@ aside.navPicto{
                     color: $gris-anthracite;
                     text-decoration: none;
                     display: block;
-                    @include adjust-font-size-to(16px);
+                    /*@include adjust-font-size-to(16px);//avec compass Vertical Rythm*/
                     &:hover {
                         color: $orange-fonce;
                     }
