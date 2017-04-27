@@ -47,8 +47,6 @@ gulp.task('sasscompil', function () {
             .on('error', onError)
             )
      
-//    .pipe(plugins.csscomb())
-//    .pipe(plugins.cssbeautify({indent: '  '}))
             .pipe(plugins.autoprefixer
                     (
                             {
@@ -60,22 +58,7 @@ gulp.task('sasscompil', function () {
     .pipe(plugins.size());
 });
 
-// Tâche "minify" = minification CSS (destination -> destination)
-//gulp.task('minify', function () {
-//  return gulp.src(destination + '/assets/css/*.css')
-//    .pipe(plugins.csso())
-//    .pipe(plugins.rename({
-//      suffix: '.min'
-//    }))
-//    .pipe(gulp.dest(destination + '/assets/css/'));
-//});
-//
-//// Tâche "build"
-//gulp.task('build', ['sasscompil']);
-//
-//// Tâche "prod" = Build + minify
-//gulp.task('prod', ['build',  'minify']);
-//
+
 //// Tâche "watch" = je surveille *scss
 gulp.task('watch', function() {
   // Watch - surveiller.scss files

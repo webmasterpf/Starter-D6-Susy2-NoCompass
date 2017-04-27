@@ -8,15 +8,15 @@
 |                       STYLE                               |
 |---------------------------------------------*/
 
-  //@include susy-breakpoint ($mobile){}
-  //@include susy-breakpoint ($desktop){}
-  //@include susy-breakpoint ($tablet){}
+  //@include breakpoint ($mobile){}
+  //@include breakpoint ($desktop){}
+  //@include breakpoint ($tablet){}
 
 //Code imbriqué à 100%
 body .conteneur
 {
     //Pas de @include container($total-columns); car deja mis dans layout !!!
-    background:transparent image-url("bg_content_etoile.gif") no-repeat left bottom;
+    background:transparent url("../images/bg_content_etoile.gif") no-repeat left bottom;
     .conteneur-flex{
       
     }
