@@ -2,28 +2,44 @@
 // créer des fichiers _node-TYPE.scss et les importer dans application.scss
 
 /*-------------------------------------|
-|       CONTENU CUSTOM NODE.TPL        |
-|     FRONTPAGE  VERTICAL DROIT        |
+|       CONTENU CUSTOM NODE.TPL |   
+|               STYLE                               |
+|     FRONTPAGE  VERTICAL DROIT   |
 |--------------------------------------*/
 
-  //@include susy-breakpoint ($mobile){}
-  //@include susy-breakpoint ($desktop){}
-  //@include susy-breakpoint ($tablet){}
+  //@include breakpoint ($mobile){}
+  //@include breakpoint ($desktop){}
+  //@include breakpoint ($tablet){}
 
 //Code imbriqué à 100%
 body .conteneur {
-    background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
-       
     
+           
     .HPGauche{
-        
+              iframe{
+            border: 0.2em solid $rose-fushia;
+            padding: em(1px);
+            @include img-centered;
+            max-width: 95%;
+            @include breakpoint ($desktop){
+                
+       
+            }
+    }
+    img{
+        @include img-centered;
+    }
         .HPGauche1{}
         .HPGauche2{}
         .HPGauche3{}
     }
     .HPDiapoVerticalDroite{
         aside.DiapoDroiteHP {
-            img{@include adaptable-img;}
+            img{
+                @include adaptable-img;
+              @include img-centered;
+            }
+
         }
     }
     
@@ -32,16 +48,16 @@ body .conteneur {
     //Taille du conteneur du groupe    
 
     .HPGauche{
-        @include span(first $desktopcol/2 of $desktopcol);
+  
         .HPGauche1{}
         .HPGauche2{}
         .HPGauche3{}
     }
     .HPDiapoVerticalDroite{
-        @include span(last 6 of $desktopcol);
+        
     }
 }
-  
+
     @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
         //Taille du conteneur du groupe
     .HPGauche{
@@ -53,46 +69,14 @@ body .conteneur {
     .HPDiapoVerticalDroite{@include span(last $tabletcol/2 of $tabletcol);} 
         
 }
-//Pour le dev, code visuel sur les blocs selon le breakpoint
-// à commenter ou supprimer pour la production
-body .conteneur {
-        .HPGauche{
-        .HPGauche1{}
-        .HPGauche2{}
-        .HPGauche3{}
-    }
-    .HPDiapoVerticalDroite{
-        background-color: #66ff33;
-    }
-   
-    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    .HPGauche{
-        background-color: #ffff33;
-        .HPGauche1{background-color: #CFD0D2;}
-        .HPGauche2{background-color: violet;}
-        .HPGauche3{}
-    }
-    .HPDiapoVerticalDroite{background-color: #00A1CB;}
-    }
-   
-    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-    .HPGauche{
-        .HPGauche1{}
-        .HPGauche2{}
-        .HPGauche3{}
-    }
-    .HPDiapoVerticalDroite{background-color: fuchsia;}
-    }
-}
 
-
-/****************/
+/********** STYLE DES ELEMENTS ******/
 .HPGauche1,.HPGauche2,.HPGauche3 {
-
     background: none;
     color: black;
     ul li {
         list-style: square;
+        
     }
     a {
         text-decoration: none;
@@ -100,36 +84,74 @@ body .conteneur {
             text-decoration: underline;
         }
     }
-
 }
-/*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE ----*/
+
+/*------------------------------
+Liste Actus pour homepage
+-------------------------------*/
 
 
-// Style du diaporama dynamique
+.HPGauche1,.HPGauche2{
+    aside.PartieGauche1, aside.PartieGauche2   {
+        h3.title{
+            text-align: center;
+            font-family: $AristaFont;
+            display: block;
+            font-size: x-large;
+            color: $rose-fushia;
+        }
+        .view-empty{text-align: center;}
+        .table-actus-hp, .table-actus-hp2{
+            width: auto;
+            margin: 0 auto;
+            border: 0;
+            @include breakpoint ($desktop){
+                width: em(400px);
+            }
+            thead th{
+                border-bottom: em(3px) solid $rose-fushia;
+            }
+            tbody{
+                border: 0;
+            }
+            tr{
+                
+                display: block;
+                background: 0;
+                border: 0;
+            }
+            td{
+                background: white;
+                border: 0;
+              margin: em(2px) 0;
+                padding: em(5px);
+                display: block;
+                border-bottom: em(1px) solid $rose-fushia;
+                &:hover{
+                    background: $rose-fushia;
+                }
+            }
 
-#transparency{
+            p{}
+            a{
+                color: $gris-anthracite;
+                text-decoration: none;
+                font-weight: bold;
+                text-align: center;
+                display: block;
+                font-size: small;
+                &:hover{
+                    text-decoration: underline;
+                    color: white;
+                }
+            }
 
-height:em(65px);
-bottom:5em; 
-left:em(12px);
-position:relative;
-z-index:15;
-width: 95%;
-@include rgba-background($rouge,0.6);/*Couleur et opacité du fond*/
+            span.date-display-single{
+                text-align: right;
+                float: right;
+                font-style: italic;
+            }
+        }
 
-h2 {
-    color: white;
-    padding: em(5px);
-    font-family: $AristaFont;
-    font-size: larger;
-     bottom:0.75em;
-     
-  }
-  a {
-    
-    text-decoration: none;
-  }
-  p{
-      margin-top: 0.2em;
-  }
+    }
 }

@@ -12,6 +12,10 @@
 
 /*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE  PANORAMIQUE----*/
 
+// #############################
+// Layout avec body.conteneur
+// #############################
+
 //Layout du diaporama dynamique (Views slideshow)
 //Code imbriqué à 100%
 body .conteneur .HPDiapo{
@@ -38,19 +42,20 @@ body .conteneur .HPDiapo{
         #contenu-diapo{display: block;}
       img{@include adaptable-img;}
     }
- 
-}
+    }
 }
 
 // Style du diaporama dynamique avec Overlay // Pas affiché sur Mobile
 body .conteneur .HPDiapo .field-content{
-    
+  
 }
-
-body .conteneur .HPDiapo{
+body .conteneur .HPDiapo,
+body .conteneur .HPDiapoVerticalDroite
+{
+    aside.DiapoDroiteHP{
    // display: none; //decommenter pour ne pas afficher sur mobile
-   @include breakpoint(($mobile,$desktop,$tablet)){ //commenter pour ne pas afficher sur mobile
-    //@include breakpoint ($desktop){
+   /*@include breakpoint(($mobile,$desktop,$tablet)){ //commenter pour ne pas afficher sur mobile*/
+    @include breakpoint ($desktop){
         display: block;
         #transparency{
             height:em(60px);
@@ -59,7 +64,7 @@ body .conteneur .HPDiapo{
             width: 98%;
             position:relative;
             z-index:15;
-            @include rgba-background($orange,0.6);/*Couleur et opacité du fond*/
+            @include rgba-background($rose-fushia,0.6);/*Couleur et opacité du fond*/
         }
         #contenu-diapo {
 
@@ -69,7 +74,6 @@ body .conteneur .HPDiapo{
             color: white;
             z-index: 20;
 
-
             h2,p {
                 color: white;
                 padding: em(5px);
@@ -77,17 +81,19 @@ body .conteneur .HPDiapo{
                 line-height: 1.3em;
             }
             a {
-
                 text-decoration: none;
             }
-              p{
-      margin-top: 0.2em;
-      font-size: larger;//taille du texte cartouche
-  }
+            p{
+                margin-top: 0.2em;
+                font-size: x-large;//taille du texte cartouche
+            }
         }
     }
+    }
 }
-
+// #############################
+// Layout avec body.conteneur-flex
+// #############################
 
 /*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE  VERTICAL DROITE----*/
 body .conteneur-flex .HPDiapoVerticalDroite{
@@ -125,45 +131,41 @@ body .conteneur .HPDiapo .field-content{
 
 body .conteneur-flex .HPDiapoVerticalDroite{
     // display: none; //decommenter pour ne pas afficher sur mobile
-   @include breakpoint(($mobile,$desktop,$tablet)){ //commenter pour ne pas afficher sur mobile
-   //@include breakpoint ($desktop){
-        aside.DiapoDroiteHP{
-             max-height: 31em;//résoudre problème d'espace vide sous le diapo
-        }
-        display: block;
-        #transparency{
-            height:em(60px);
-            bottom:em(69px); 
-            left:em(19px);
-            width: 93%;
-            position:relative;
-            z-index:15;
-            @include rgba-background($gris-clair-moyen,0.6);/*Couleur et opacité du fond*/
-        }
-        #contenu-diapo {
+    @include breakpoint(($mobile,$desktop,$tablet)){ //commenter pour ne pas afficher sur mobile
+                                                     //@include breakpoint ($desktop){
+                                                     aside.DiapoDroiteHP{
+                                                         max-height: 31em;//résoudre problème d'espace vide sous le diapo
+                                                     }
+                                                     display: block;
+                                                     #transparency{
+                                                         height:em(60px);
+                                                         bottom:em(69px); 
+                                                         left:em(19px);
+                                                         width: 93%;
+                                                         position:relative;
+                                                         z-index:15;
+                                                         @include rgba-background($gris-clair-moyen,0.6);/*Couleur et opacité du fond*/
+                                                     }
+                                                     #contenu-diapo {
+                                                         position: relative;
+                                                         bottom:8.375em;
+                                                         left: em(10px);
+                                                         color: white;
+                                                         z-index: 20;
 
-            position: relative;
-            bottom:8.375em;
-            left: em(10px);
-            color: white;
-            z-index: 20;
-
-
-            h2,p {
-                color: white;
-                padding: em(5px);
-                font-family: $AristaFont;
-                line-height: 1.3em;
-            }
-            a {
-
-                text-decoration: none;
-            }
-              p{
-      margin-top: 0.2em;
-      font-size: large;//taille du texte cartouche
-  }
-        }
-   }
-    
+                                                         h2,p {
+                                                             color: white;
+                                                             padding: em(5px);
+                                                             font-family: $AristaFont;
+                                                             line-height: 1.3em;
+                                                         }
+                                                         a {
+                                                             text-decoration: none;
+                                                         }
+                                                         p {
+                                                             margin-top: 0.2em;
+                                                             font-size: large;//taille du texte cartouche
+                                                         }
+                                                     }
+    }
 }

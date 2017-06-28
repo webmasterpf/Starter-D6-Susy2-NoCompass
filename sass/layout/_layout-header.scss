@@ -32,19 +32,21 @@
          }
         .menuHead{}  
      }                
-      
      
+     
+               
      @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
           //@include clearfix;
          .headHaut {
              @include span(full);
              .logoHead { 
-                @include span(first 2 of $desktopcol);
+                /*@include span(first 2 of $desktopcol);*/
+                @include span(first 3 of 12);
                 padding: 0;
              }
              .menuImg {
-                @include span(last 10 of $desktopcol); 
-                                 
+                /*@include span(last 10 of $desktopcol);*/ 
+                @include span(last 8 of 12);                  
              }
          }
          .headBas {
@@ -53,11 +55,11 @@
              .headSearch{@include span(last 5 of $desktopcol );}
              .menuHead{
              aside.menuDyn{
-                 
-                ul#superfish-1{}
+
+                 ul#superfish-1{}
              }
-         } 
-         
+             } 
+
          }
      }
      @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
@@ -95,7 +97,7 @@
 /*---- HEADER BAS ----*/
 
 .headBas {
- background: $gris-clair-moyen;//Modifier la couleur du fond de la partie basse selon couleur du lycée
+ background: $rose-fushia;//Modifier la couleur du fond de la partie basse selon couleur du lycée
 }
 
 .headSearch {
@@ -104,7 +106,7 @@
     text-align: right;
     margin: em(2px) 0 0 0;
     //background: transparent url("../images/'bg_recherche.gif') no-repeat scroll 6em em(7px);
-    .form-item > label{color: #DDD;font-family: $AristaFont;font-size: medium;}
+    /*.form-item > label{color: #DDD;font-family: $AristaFont;font-size: medium;}*/
     input[type=image]{
         vertical-align: middle;
     }

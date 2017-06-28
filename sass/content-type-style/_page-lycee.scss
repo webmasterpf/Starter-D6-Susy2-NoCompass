@@ -45,24 +45,61 @@ h1.titre-lycee,h1.title-classes{
     line-height: 1.0em
 }
 
-/*######-------- COLONNE 1 --------######*/
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#colonne-1.page-lycee,
+#colonne-2.page-lycee,
+#colonne-3.page-lycee{
+    p{
+    padding: em(5px);
+}
+span{
+    font-size: small;
+    padding: em(5px);
+}
+strong,b{
+    color: $rose-fushia;
+}
+    a{
+        color: $violet;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+        
+    }
+    
+}
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
 #colonne-1.page-lycee{
     h2{}
 h3{}
 h4{}
 p{}
-ul{}
+ul{
+    width: auto;
+}
 img{
     //@include ombrage(0.3em,0,0,0.1em);
     display: block;
     margin: 0 auto;
     @include adaptable-img;
+    width: auto;
+    float: none;
+    border: em(2px) solid $violet;
+    padding: em(2px);
 }
-
+div.illus-lycee{
+    img{
+        
+        transform: scale(0.8);
+    }
+}
 a{
     &:hover{}
 }
-
 
 h2 a{}
 h2 a:hover{}
@@ -70,6 +107,30 @@ h3 a{}
 h3 a:hover{}
 h4 a{}
 h4 a:hover{}
+aside.diapo_lycee{
+    display: block;
+    margin: 0 auto;
+    width: em(175px) !important;
+    width: em(174px);/*IE*/
+     * {//cible le contenu
+        position:relative;
+        /*position:relative !important;*/
+        min-height: 100%;
+    }
+    .views_slideshow_cycle_main{
+        /*position:relative !important;*/
+        
+        
+    }
+    .views_slideshow_cycle_slide{
+        overflow: auto;
+    }
+    img{
+        border: em(2px) solid $violet;
+        margin: em(10px) 0 0;
+    }
+}
+
 } 
 /*######-------- COLONNE 2 --------######*/
 #colonne-2.page-lycee{
@@ -126,65 +187,132 @@ h4 a:hover{}
             td{}
         }
     }
+    div.content{
+        //style pour le dernier élément § de content
+        p.external-content{
+            width: 95%;
+        margin: em(15px) auto;
+        @include breakpoint ($desktop){
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: em(85px);
+            height: 0;
+            overflow: initial;
+        }
+        }
+       //style particulier pour le 1er § qui ne contient pas la iframe 
+       p,p:first-child {
+            margin: 0 em(15px);
+            padding: 0;
+        }
+         iframe,object{
+        border: em(2px) solid $violet;
+        padding: em(1px);
+        @include img-centered;
+        max-width: 95%;
+
+        @include breakpoint ($desktop){
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+    }
+    }
+    
+  #video_lycee{
+    width: 95%;
+    margin: em(15px) auto;
+    @include breakpoint ($desktop){
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: em(35px);
+        height: 0;
+        overflow: initial;
+    }
+    iframe,object{
+        border: em(2px) solid $violet;
+        padding: em(1px);
+        @include img-centered;
+        max-width: 95%;
+
+        @include breakpoint ($desktop){
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+    }
 }
+   
+}
+
 #colonne-2.page-classes{
     padding: 0.5em;
 }
-/*######-------- COLONNE 3 --------######*/
+
+
+
 #colonne-3.page-lycee{
-    h2{}
-    h3{}
-    h4{}
-    p{}
-    ul{}
-    img{
-
-    }
-
-    a{
-        &:hover{}
-    }
-
-
-    h2 a{}
-    h2 a:hover{}
-    h3 a{}
-    h3 a:hover{}
-    h4 a{}
-    h4 a:hover{}
+ #docs_lycee{
+    
+     h3{
+    font-family:$AristaFont;
+    text-align: center;
+    color: $violet;
+    padding: 5px 0;
+    font-size: medium;
+    margin: 0 0 5px 0;
 }
-
-#service-tiers{
+ table{
+    
     margin: 0 auto;
-    width: 55%;
-    border: 0.15em solid $violet;
-    padding: 0.2em;
+    width: 95%;
+    
+    border: em(3px) solid $gris-clair-moyen;
+    background: #EFEFEF;
+    box-shadow:0px 0px 7px 1px $prune;
+    -moz-box-shadow: 3px $prune;
+    -webkit-box-shadow: 3px $prune;
+    behavior: url(/sites/all/libraries/PIE/PIE.htc);
+   position: relative;
 }
-#docs-utiles{
-    margin: 1em auto;
-    width: 40%;
-    background: $gris-clair;
-    text-align: left;
+ tbody{
+   border: 0;
+    padding: em(10px) em(15px);
+    
 }
-table.doc-joint-lycee{
-       tr.even, tr.odd {//override suite stacktable.js
-                         background-color: transparent;
-                         border-bottom: none;
-                         padding: 0;
+tr{
+    border: 0;
+    background: 0;
 
-        }
+}
+td{
+    text-align: center;
+   
+    a{
+    display: block;
+    color: $prune;
+    text-decoration: none;
+   
+    font-size: small;
+    &:hover{
+    background: $rose-fushia;
+    @include arrondis(em(10px));
+    @include PIE;
+   position: relative;
+}
+}
+}
+ 
+ 
+ .filefield-icon{
+    display: none;
+}
 }
 
-
-/*________ CLASSES DOCUMENTS ________*/
-
-.accordeon-classes{}
-.accordeon-classes a{color: $violet;text-decoration: none;}
-.accordeon-classes a:hover{text-decoration: underline;}
-.accordeon-classes .views-accordion-item .accordion-header-active {
-background: $violet;color: $gris-clair;
-}
-/*________ CONTENU INFOS ADMIN ________*/
-#colonne-2.info-admin{
-    padding: 0.5em;
 }

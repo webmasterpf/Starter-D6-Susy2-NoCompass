@@ -15,23 +15,29 @@ body .conteneur{
         }
         .content-global{
 
-
-
+                     
         }
         .content-inner{
 
             .content-header{}
         }
         .content-top{
-
+            min-height: 5em;//permet d'éviter que defilant se superpose
+            
+               @include break;
+                &:before{
+                content: " ";
+                display: block;
+                clear: both;
+            }
         }
         .middle-content{
-           
-            @include clearfix;
+            @include span( 12 of $desktopcol);         
 
         }
         .node-inner{  
-
+            @include span( 12 of $desktopcol);
+            /*@include clearfix;*/
         }                       
         .content-bottom{}
         .content-bottom-home{
@@ -53,6 +59,9 @@ body .conteneur{
                 content: " ";
                 display: block;
                 clear: both;
+            }
+            p{
+               //Voir fichier typos.scss pour taille
             }
         }
 

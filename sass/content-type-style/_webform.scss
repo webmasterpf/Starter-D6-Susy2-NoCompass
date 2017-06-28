@@ -56,34 +56,50 @@ h1.titre-webform{
 
 #colonne-2.webform{
     h2{
-        color: $orange;
+        color: $rose-fushia;
         padding: em(5px);
     }
     h3{
         color: $violet;
         padding: em(5px);
+        font-size: large;
     }
     h4{
         padding: em(5px);
-        color: $orange;
+        color: $rose-fushia;
     }
     p{
-        padding: em(5px);
+        padding: em(3px);
         font-size: small;
     }
     ul{
         padding: em(5px);
     }
     img{
-
+        @include border-fuschia-violet;
+        margin: 0 auto;
+        display: block;
     }
     a{
-        color: $orange;
+        color: $rose-fushia;
         text-decoration: none;
         padding: 2px;
         &:hover{
             color: white;
-            background: $orange;
+            background: $rose-fushia;
+        }
+    }
+    a.gmap{
+
+        &:hover{
+
+            background: 0;
+        }
+        img{
+            @include zoom-css3(1);
+            &:hover{
+                @include zoom-css3-hover(0.97);
+            }
         }
     }
     form{
@@ -106,4 +122,12 @@ form.webform-client-form{
         @include cesure-txt;
     }
     .form-item{margin-bottom: 0.5em;margin-top: 0.5em;}
+}
+
+/*------------------------------------
+        PAGE INSCRIPTIONS WEBFORM
+_______________________________________*/
+#texte-sous-formulaire{
+    margin: 1em 0;
+    font-size: small;
 }

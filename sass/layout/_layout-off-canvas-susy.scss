@@ -28,7 +28,7 @@ body .conteneur {
 
     }
     .close{
-        background: $gris-clair;//changer couleur selon le site !!!
+        background: $rose-fushia;//changer couleur selon le site !!!
     }
     img.close-btn{
         vertical-align: middle;
@@ -55,7 +55,7 @@ body .conteneur {
     }
     @include breakpoint ($desktop){
 $off-canvas-height: 7.8em;   
-$off-canvas-top: 9.8em;   
+$off-canvas-top: 10.3em;   
         .transformer {
 
             transition: transform 0.3s ease;
@@ -71,14 +71,14 @@ $off-canvas-top: 9.8em;
             bottom: 0;
             height: $off-canvas-height;//limite la hauteur du bloc
             @include arrondis;
-            background: $gris-clair;//changer couleur selon le site !!!
+            background: $rose-fushia;//changer couleur selon le site !!!
         }
         
     .menu-toggle, .transformer.is-open > .menu-toggle{
             position: relative;
             padding: 0.3em;
             left: 40%;
-            top: -2.0em;
+            top: -2.3em;//position de l'onglet
                     /* CSS3 : pour IE, fixer rotation */
         -ms-transform: rotate(0deg);
         -moz-transform: rotate(0deg);

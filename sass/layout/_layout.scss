@@ -1,26 +1,11 @@
 // Importer les fichiers scss partiels (avec _) afin de compiler le
 // fichier css final utile pour le thème
-// Activer compass via 
-// webmaster@vm-server1:~$ compass watch /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
 
-
-
-html {
- margin: 0;
- padding: 0;
-}
-
-
-body {	
-    font-family: $FontRaleway;//Typo globale du site
-    color: $gris-clair-typo;
-
-}
+//Déplacement des valeurs pour le body à cause de problèmes de compilation
 
  /*------------------------------------------------------*
-  *--------    CSS BLOCS     						 ----*
+  *--------    CSS BLOCS     	 ----*
   *------------------------------------------------------*/
-
  
  //@include breakpoint ($mobile){}
   //@include breakpoint ($desktop){}
@@ -32,7 +17,9 @@ body {
 // sinon problèmes dans la grille !
  
 /*-- LAYOUT PRINCIPAL --*/
-body .conteneur{
+body {
+    
+    .conteneur{
     //Approche mobile-first,réglage pour mobile
     @include container($susy);// largeur stricte
     @debug susy-get(columns);
@@ -90,7 +77,6 @@ body .conteneur{
 }//Fin definition du conteneur principal et ses enfants pour mobile
 
 
-
 //classe sur le bloc
 aside.content_top{
  text-align: center;
@@ -106,5 +92,8 @@ aside.content_top{
 //Images RWD pour nodes
 .node-inner
 {
+    //réglages commun à surcharger si besoin
     img,iframe,object,embed{@include adaptable-img;}
+    ul{list-style-position: inside;}
     }
+}

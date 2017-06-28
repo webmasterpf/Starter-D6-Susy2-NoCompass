@@ -3,21 +3,7 @@
 ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
 // Styles globaux
 /*------- EFFETS VISUELS GENERIQUES--------------*/
-.ombrage {
-    @include ombrage;
-}
-.ombrage_bas {
-    @include ombrage-bas;
-}
-.table_tr_ombrage_bas{
-    @include table-tr-ombrage-bas;
-}
-.ombrage_bloc {
-    @include ombrage-bloc;
-}
-.ombrage_bas_table_actu{
-    @include ombrage-bas-table-actu;
-}
+
 
 /**-- style du fil d'ariane --**/
 
@@ -26,15 +12,16 @@
     @include breakpoint ($desktop){
         display: block;
         padding: 0 0 0 0.3em;
-        color: $gris-clair-moyen;
+        color: $violet;
         text-decoration: none;
+        @include font-size(s);//taille avec typey
 //        background: chocolate;//supprimer en PROD
         a {
-            color: $gris-anthracite;
+            color: $rose-fushia;
             text-decoration: none;
               font-size: small;
             &:hover {
-                color: #000;
+                color: $violet;
                 text-decoration: underline;
             }
         }
