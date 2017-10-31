@@ -119,6 +119,8 @@ gulp.task('sasscompil', function () {
                 noCache: true,
                 outputStyle: 'compressed',
                 errLogToConsole: true,
+                sourceComments: 'normal',
+                debugInfo: true,
                 includePaths: [].concat(
                         assetsPath.gems,
                         assetsPath.node_modules,
@@ -147,9 +149,9 @@ gulp.task('sasscompil', function () {
 gulp.task('browser-sync', function() {
 browserSync.init({
         //changer l'adresse du site pour lequel utiliser browserSync
-        proxy: "http://d6-gasquet.vmdev",
+        proxy: "http://d6-rostand.vmdev",
         open: false,
-        logLevel: 'info',//debug pour avoir toutes les infos
+        logLevel: 'info',//pour avoir toutes les infos ,utiliser "debug", pour infos de base "info"
         logConnections: true
     });
 });
