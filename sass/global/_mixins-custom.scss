@@ -181,7 +181,7 @@
     -webkit-box-shadow: $decalage-horizontal $decalage-vertical 0.3em $couleur-ombre;
     box-shadow: $decalage-horizontal $decalage-vertical 0.3em $couleur-ombre;
     }
-@mixin ombrage-interne($contour:0.5em,$decalage-horizontal:0.5em,$decalage-vertical:0.5em,$profondeur:0.3em,$couleur-ombre:#aaa){
+@mixin ombrage-interne($decalage-horizontal:0.5em,$decalage-vertical:0.5em,$profondeur:0.3em,$couleur-ombre:#aaa){
     -moz-box-shadow: inset $decalage-horizontal $decalage-vertical $profondeur $couleur-ombre;
     -webkit-box-shadow: inset $decalage-horizontal $decalage-vertical $profondeur $couleur-ombre;
     box-shadow: inset $decalage-horizontal $decalage-vertical $profondeur $couleur-ombre;
@@ -202,10 +202,8 @@
         box-shadow: 1px 2px 2px #555;
     }
     
-@mixin ombrage-bloc {
-    -moz-box-shadow: 2px 2px 5px #aaa;
-    -webkit-box-shadow: 2px 2px 5px #aaa;
-    box-shadow: 2px 2px 5px #555;
+@mixin ombrage-bloc($decalage-horizontal:0.5em,$decalage-vertical:0.5em,$force-degrade:0.3em,$couleur-ombre:#aaa) {
+       box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
     }
     
     @mixin ombrage-texte($angle:0.5em,$distance:0.2em,$flou:0.6em,$couleur:#1a181a){
